@@ -6,9 +6,7 @@ import { useAccount } from '../../context';
 export default function NavBar() {
 
    const {accountDetails, setAccountDetails} = useAccount()
-   const [dropdown, setDropdown] = useState(false)
     
-   useEffect(()=>{console.log(accountDetails)},[])
   return (
 <>
     <nav className= {styles["NavBarContainer"]}>
@@ -18,11 +16,8 @@ export default function NavBar() {
         <ul>
             <NavLink to = "/" > Home </NavLink>
         </ul>
-        <ul className = {styles["DropDownContainer"]} onClick={()=>{setDropdown(!dropdown)}}>
-            { dropdown ? null :
-                (
+        <ul className = {styles["DropDownContainer"]}>
 
-                    <div className={styles["DropDown"]}>    
                 {Object.keys(accountDetails).length === 0 ? 
                 <NavLink to = "/Login" className={styles["AccountDisplay"]}>Login</NavLink>
                 :
@@ -30,9 +25,6 @@ export default function NavBar() {
                         {accountDetails["username"]}
                     </label>
                 }
-                    </div>
-                        )
-                    }
         </ul>
     </nav>
     <Outlet />

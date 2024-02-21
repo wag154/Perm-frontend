@@ -19,7 +19,7 @@ export default function Login() {
   const HandleAccount = async ()=>{
       localStorage.setItem("loggedin", "true" )
       setAccountDetails({"username" : username , "email" : email})
-      Navigate("/")
+      Navigate("/perm")
   }
 
   const HandleSubmit = async (e)=>{

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { NavBar } from './layout';
+import { NavBar , SideBar } from './layout';
 import { Login, Home , Permission ,NotFound } from './page';
 import { useAccount } from './context';
 import {Routes, Route} from 'react-router-dom'
@@ -13,7 +13,7 @@ function App() {
 
     return initialValue || "";
   })
-  useEffect(()=>{console.log("here",loggedIn)},[])
+
   return (
  <>
 
@@ -25,8 +25,12 @@ function App() {
     
       <Route index element = {< Home />} />
     </Route>
+    
     {loggedIn ?
-      (<Route path = "/perm" element ={<Permission />} />)
+      (<Route path = "/perm" element ={<SideBar />}>
+        <Route index element ={<Permission />} />
+      </Route>
+      )
       :
       null
     }
