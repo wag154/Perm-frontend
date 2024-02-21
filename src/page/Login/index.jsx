@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import styles from "./index.module.css"
 import { useNavigate } from 'react-router-dom';
+import { useAccount } from '../../context';
 
 export default function Login() {
   
@@ -9,10 +10,17 @@ export default function Login() {
   const [password , setPassword] = useState("")
   const [email, setEmail] = useState("")
   const [errorbox, setErrorBox] = useState(false)
+  const {accountDetails, setAccountDetails} = useAccount()  
 
   const Navigate = useNavigate()
 
   const url = "http://127.0.0.1:8000/user/";
+
+  const HandleAccount = async ()=>{
+      localStorage.setItem("loggedin", "true" )
+      setAccountDetails({"username" : username , "email" : email})
+      Navigate("/")
+  }
 
   const HandleSubmit = async (e)=>{
     e.preventDefault()
@@ -34,7 +42,8 @@ export default function Login() {
     try{
       const resp = await fetch (url + (login ? "login" : "new"), options)
       if (resp.ok){
-        login ? Navigate("/") : setLogin(!login)
+        const data = await resp.json()
+        login ? HandleAccount()  : setLogin(!login)
       } 
       else {
         setErrorBox(true)

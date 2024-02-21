@@ -7,3 +7,21 @@
     justify-content: space-around;
     align-items: center;
 }
+.DropDownContainer{
+    background-color: blue;
+    height : 80%;
+    width : 5%;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+.DropDown{
+    background-color: red;
+    width : 20vw;
+    height : 10vh;
+    position: absolute;
+    top : 5vh;
+}
+.AccountDisplay{
+    font-size: 4ch;
+}
