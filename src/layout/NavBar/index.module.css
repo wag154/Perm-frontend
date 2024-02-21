@@ -4,24 +4,41 @@
     height : 5vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 .DropDownContainer{
-    background-color: blue;
+
+    text-decoration: none;
     height : 80%;
-    width : 5%;
+    width : 20%;
     display : flex;
     justify-content: center;
     align-items: center;
 }
-.DropDown{
-    background-color: red;
-    width : 20vw;
-    height : 10vh;
-    position: absolute;
-    top : 5vh;
+
+.TextDisplay{
+    text-decoration: none;
+    font-size: 3ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.AccountDisplay{
-    font-size: 4ch;
+.IconContainer{
+    width : 15%;
+    height : 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.IconImg{
+    height : 90%;
+    width : auto;
+}
+.IconText{
+    font-size: 3ch; 
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
