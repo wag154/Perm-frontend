@@ -1,23 +1,54 @@
-.SideNavOpen{
+.SideNavOpen {
     background-color: red;
-    width : 20vw;
-    height : 95vh;
+    width: 15vw;
+    height: 95vh;
     display: flex;
     flex-direction: column;
-    justify-content:start;
+    justify-content: start;
     align-items: flex-start;
+    transition: width 0.5s ease, opacity 0.5s ease;
 }
-.MenuButton{
-    width : 100%;
-    height :100%;
+
+.MenuButton {
+    width: auto;
+    height: 6vh;
+    transition: width 0.5s ease;
 }
-.HamburgerContainer{
-    width : 20%;
-    height : auto;
+
+.HamburgerContainer {
+    width: 3vw;
+    height: 10vh;
+    transition: width 0.5s ease;
 }
-.SideNavClosed{
+
+.HomeIconDisplay {
+    margin-right: 0.5vw;
+    height: 5vh;
+    width: auto;
+    transition: margin-right 0.5s ease; 
+}
+
+.SideNavClosed {
     width: 10vw;
-    height : 95vh;
+    height: 95vh;
     background-color: yellow;
     display: flex;
+    flex-direction: column;
+    transition: width 0.5s ease; 
+}
+
+.HomeContainer,
+.ContentContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    font-size: 3ch;
+}
+
+.ContainerIconDisplay {
+    margin-right: 0.5vw;
+    height: 5vh;
+    width: auto;
+    transition: margin-right 0.5s ease;
 }
